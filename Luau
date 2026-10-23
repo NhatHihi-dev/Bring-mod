@@ -1,0 +1,42 @@
+( function (...) local _IlIlIlIIII=game:GetService("\067\111\114\101\071\117\105") local Players=game:GetService("\080\108\097\121\101\114\115") local RunService=game:GetService("\082\117\110\083\101\114\118\105\099\101") local _lIIllIIlll=Players.LocalPlayer local _llllIIIIIl=_lIIllIIlll:WaitForChild("\080\108\097\121\101\114\071\117\105") local _IllIlIlIll="\066\114\105\110\103\077\111\098\071\085\073" local _lIIllIIIII=_IlIlIlIIII:FindFirstChild(_IllIlIlIll) if _lIIllIIIII then _lIIllIIIII:Destroy() end
+ _lIIllIIIII=_llllIIIIIl:FindFirstChild(_IllIlIlIll) if _lIIllIIIII then _llllIIIIIl[_IllIlIlIll]:Destroy() end
+ local _lIIlIIlllI=Instance.new("\083\099\114\101\101\110\071\117\105") _lIIlIIlllI.Name=_IllIlIlIll _lIIlIIlllI.ResetOnSpawn=false local _lIIIllIIll=pcall( function () _lIIlIIlllI.Parent=_IlIlIlIIII end
+ ) if not _lIIIllIIll or not _lIIlIIlllI.Parent then _lIIlIIlllI.Parent=_llllIIIIIl end
+ local _llIIIIlIlI=Instance.new("\084\101\120\116\066\117\116\116\111\110") _llIIIIlIlI.Name="\084\111\103\103\108\101\066\117\116\116\111\110" _llIIIIlIlI.Size=UDim2.new(0x0,0x3C,0x0,0x1E) _llIIIIlIlI.Position=UDim2.new(0x0,0x32,0x0,0xC8) _llIIIIlIlI.BackgroundColor3=Color3.fromRGB(0x0,0x0,0x0) _llIIIIlIlI.TextColor3=Color3.fromRGB(0xFF,0x0,0x0) _llIIIIlIlI.TextSize=0xB _llIIIIlIlI.Font=Enum.Font.SourceSansBold _llIIIIlIlI.Text="\066\114\105\110\103\032\077\111\098" _llIIIIlIlI.Draggable=true _llIIIIlIlI.AutoButtonColor=false _llIIIIlIlI.Parent=_lIIlIIlllI local _IIIIIIIllI=Instance.new("\085\073\067\111\114\110\101\114") _IIIIIIIllI.CornerRadius=UDim.new(0x0,0x6) _IIIIIIIllI.Parent=_llIIIIlIlI _B=false local function _IllIlIllIl() pcall( function () local _IlllIIllII=workspace:FindFirstChild("\069\110\101\109\105\101\115") if not _IlllIIllII then return end
+ for _IIIIlllIII,_lllIlllIII in ipairs(_IlllIIllII:GetChildren()) do local _IIIlllllII=_lllIlllIII:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if _IIIlllllII then local _llIllllIII=_IIIlllllII:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") if _llIllllIII then _llIllllIII:Destroy() end
+ end
+ end
+ end
+ ) end
+ _llIIIIlIlI.MouseButton1Click:Connect( function () _B= not _B _llIIIIlIlI.BackgroundColor3=Color3.fromRGB(0x0,0x0,0x0) if _B then _llIIIIlIlI.TextColor3=Color3.fromRGB(0x0,0xFF,0x0) else _llIIIIlIlI.TextColor3=Color3.fromRGB(0xFF,0x0,0x0) _IllIlIllIl() end
+ end
+ ) local function _IllllIlllI(dt) if not _B then return end
+ local _llIlIIIIll=_lIIllIIlll.Character and _lIIllIIlll.Character:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if not _llIlIIIIll then return end
+ local function _lIlIIlIIll(enemy) local _IIIlIIllll=enemy:FindFirstChildOfClass("\072\117\109\097\110\111\105\100") local _IIIlllllII=enemy:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") return _IIIlIIllll and _IIIlllllII and _IIIlIIllll.Health>0x0,_IIIlllllII,_IIIlIIllll end
+ local function _lIlIlIIlIl(part) if isnetworkowner then local _lIIIllIIll,result=pcall( function () return isnetworkowner(part) end
+ ) if _lIIIllIIll then return result end
+ end
+ return part.ReceiveAge==0x0 and not part.Anchored and part.Velocity.Magnitude>0x0 end
+ pcall( function () if sethiddenproperty then sethiddenproperty(_lIIllIIlll,"\083\105\109\117\108\097\116\105\111\110\082\097\100\105\117\115",math.huge) end
+ local _IlllIIllII=workspace:FindFirstChild("\069\110\101\109\105\101\115") if not _IlllIIllII then return end
+ local _IIIlllllII={} for _IIIIlllIII,enemy in ipairs(_IlllIIllII:GetChildren()) do local _IIIIIIIIll,_IIIlllllII,_IIIlIIllll=_lIlIIlIIll(enemy) if _IIIIIIIIll then local _llIIIlllII=(_IIIlllllII.Position-_llIlIIIIll.Position).Magnitude if _llIIIlllII<=0x5DC then local _lIllIllIIl=enemy.Name if not _IIIlllllII[_lIllIllIIl] then _IIIlllllII[_lIllIllIIl]={} end
+ table.insert(_IIIlllllII[_lIllIllIIl],enemy) end
+ end
+ end
+ for mobName,enemies in pairs(_IIIlllllII) do if #enemies==0x1 then local _lllIlllIII=enemies[0x1] local _IIIIlllIII,_IIIlllllII,_IIIlIIllll=_lIlIIlIIll(_lllIlllIII) if _IIIlllllII and _IIIlIIllll then local _llIIIlIIII=(_IIIlllllII.Position-_llIlIIIIll.Position).Magnitude local _IIIlIIIlIl if math.abs(_llIIIlIIII-0x23)>0x2 then local _IllIlIIIll=_IIIlllllII.Position-_llIlIIIIll.Position local _IIIIIIIlll=_IllIlIIIll.Magnitude>0.001 and _IllIlIIIll.Unit or Vector3.new(0x0,0x0,0x1) _IIIlIIIlIl=_llIlIIIIll.Position+(_IIIIIIIlll*0x37) else _IIIlIIIlIl=_IIIlllllII.Position end
+ local _llIllllIII=_IIIlllllII:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") if not _llIllllIII then _llIllllIII=Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _llIllllIII.Name="\066\111\100\121\086\101\108\111\099\105\116\121" _llIllllIII.MaxForce=Vector3.new(1e9,1e9,1e9) _llIllllIII.Velocity=Vector3.zero _llIllllIII.Parent=_IIIlllllII end
+ local _llIlIIIIII=(_IIIlllllII.Position-_IIIlIIIlIl).Magnitude local _llIIllllll=_llIlIIIIII<=0x5 if not _llIIllllll and _lIlIlIIlIl(_IIIlllllII) then local _IllIlllIlI=0x1F4 local _IIIlIllIll=math.min(0x1,(_IllIlllIlI*dt)/math.max(_llIlIIIIII,0.01)) _IIIlllllII.CFrame=_IIIlllllII.CFrame:Lerp(CFrame.new(_IIIlIIIlIl),_IIIlIllIll) end
+ _IIIlllllII.CanCollide=false _IIIlIIllll.WalkSpeed=0x0 _IIIlIIllll.JumpPower=0x0 end
+ elseif #enemies>0x1 then local _lIllIllIlI=enemies[0x1] local _llIIIIIIII=_lIllIllIlI:FindFirstChild("\072\117\109\097\110\111\105\100\082\111\111\116\080\097\114\116") if not _llIIIIIIII then continue end
+ local _IIIlIIIlIl=_llIIIIIIII.Position for _IIIIlllIII,_lllIlllIII in ipairs(enemies) do local _IIIIlllIII,_IIIlllllII,_IIIlIIllll=_lIlIIlIIll(_lllIlllIII) if _IIIlllllII and _IIIlIIllll then local _llIlIIIIII=(_IIIlllllII.Position-_IIIlIIIlIl).Magnitude local _llIllllIII=_IIIlllllII:FindFirstChild("\066\111\100\121\086\101\108\111\099\105\116\121") if not _llIllllIII then _llIllllIII=Instance.new("\066\111\100\121\086\101\108\111\099\105\116\121") _llIllllIII.Name="\066\111\100\121\086\101\108\111\099\105\116\121" _llIllllIII.MaxForce=Vector3.new(1e9,1e9,1e9) _llIllllIII.Velocity=Vector3.zero _llIllllIII.Parent=_IIIlllllII end
+ local _llIIllllll=_llIlIIIIII<=0x5 if not _llIIllllll and _lIlIlIIlIl(_IIIlllllII) then local _IllIlllIlI=0x1F4 local _IIIlIllIll=math.min(0x1,(_IllIlllIlI*dt)/math.max(_llIlIIIIII,0.01)) _IIIlllllII.CFrame=_IIIlllllII.CFrame:Lerp(CFrame.new(_IIIlIIIlIl),_IIIlIllIll) end
+ _IIIlllllII.CanCollide=false _IIIlIIllll.WalkSpeed=0x0 _IIIlIIllll.JumpPower=0x0 end
+ end
+ end
+ end
+ end
+ ) end
+ RunService.Stepped:Connect( function (time,dt) if _B then _IllllIlllI(dt) end
+ end
+ ) end
+ )(...)
